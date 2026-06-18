@@ -1,81 +1,44 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family:Arial, sans-serif;
+    margin:0;
     background:#0f172a;
     color:white;
+    font-family:Arial,sans-serif;
 }
 
-/* Шапка */
-
-.site-header{
-    display:flex;
-    align-items:center;
-    padding:15px 25px;
-    background:#111827;
-    border-bottom:2px solid #374151;
-}
-
-.logo-link{
-    display:flex;
-    align-items:center;
-    text-decoration:none;
-}
-
-.logo{
-    width:80px;
-    height:80px;
-}
-
-.logo-text{
-    margin-left:12px;
-}
-
-.logo-top{
-    font-size:24px;
-    font-weight:bold;
-    color:#d4af37;
-}
-
-.logo-bottom{
-    font-size:18px;
-    color:white;
-}
-
-/* Головний банер */
-
-.hero{
+header{
     text-align:center;
-    padding:100px 20px;
-}
-
-.hero h1{
-    font-size:4rem;
-    color:#d4af37;
-}
-
-.hero p{
-    font-size:1.3rem;
-    margin-top:20px;
-    color:#cbd5e1;
-}
-
-/* Картки */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
     padding:40px;
+    background:#111827;
+}
+
+h1{
+    margin:0;
+}
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    padding:20px;
+    background:#1e293b;
+}
+
+input,select{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:30px;
 }
 
 .card{
     background:#1e293b;
-    border:1px solid #334155;
     border-radius:12px;
     padding:20px;
     transition:0.3s;
@@ -83,24 +46,18 @@ body{
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:#d4af37;
 }
 
-.card h3{
-    color:#d4af37;
-    margin-bottom:10px;
+.card h2{
+    margin-top:0;
+    color:#60a5fa;
 }
 
-.card p{
-    color:#cbd5e1;
+.tag{
+    display:inline-block;
+    background:#334155;
+    padding:4px 8px;
+    border-radius:5px;
+    margin:2px;
 }
 
-/* Посилання */
-
-a{
-    color:#d4af37;
-}
-
-a:hover{
-    color:#facc15;
-}
