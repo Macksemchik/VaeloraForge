@@ -1,0 +1,106 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+/* Шапка */
+
+.site-header{
+    display:flex;
+    align-items:center;
+    padding:15px 25px;
+    background:#111827;
+    border-bottom:2px solid #374151;
+}
+
+.logo-link{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+}
+
+.logo-text{
+    margin-left:12px;
+}
+
+.logo-top{
+    font-size:24px;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+.logo-bottom{
+    font-size:18px;
+    color:white;
+}
+
+/* Головний банер */
+
+.hero{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:#d4af37;
+}
+
+.hero p{
+    font-size:1.3rem;
+    margin-top:20px;
+    color:#cbd5e1;
+}
+
+/* Картки */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px;
+}
+
+.card{
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:12px;
+    padding:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#d4af37;
+}
+
+.card h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+/* Посилання */
+
+a{
+    color:#d4af37;
+}
+
+a:hover{
+    color:#facc15;
+}
