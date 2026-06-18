@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Раси — Vaelora Forge</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+.header{
+    background:#111827;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    display:flex;
+    height:calc(100vh - 80px);
+}
+
+.sidebar{
+    width:300px;
+    background:#1e293b;
+    overflow-y:auto;
+    border-right:2px solid #334155;
+}
+
+.race{
+    padding:15px;
+    cursor:pointer;
+    border-bottom:1px solid #334155;
+}
+
+.race:hover{
+    background:#334155;
+}
+
+.content{
+    flex:1;
+    padding:30px;
+    overflow-y:auto;
+}
+
+.content h1{
+    color:#60a5fa;
+}
+
+.stat{
+    background:#1e293b;
+    padding:10px;
+    margin:5px 0;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Раси Vaelora</h1>
+</div>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <div class="race" onclick="showRace('human')">
+            Люди
+        </div>
+
+        <div class="race" onclick="showRace('dragonborn')">
+            Драконороджені
+        </div>
+
+        <div class="race" onclick="showRace('tigari')">
+            Тигролюди
+        </div>
+
+    </div>
+
+    <div class="content" id="content">
+
+        <h1>Оберіть расу</h1>
+
+        <p>
+            Натисніть на расу ліворуч для перегляду інформації.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const races = {
+
+human: `
+<h1>Люди</h1>
+
+<div class="stat"><b>Тип:</b> Смертні</div>
+<div class="stat"><b>Середній зріст:</b> 160-200 см</div>
+<div class="stat"><b>Тривалість життя:</b> 70-100 років</div>
+
+<h2>Опис</h2>
+
+<p>
+Люди є найчисленнішим народом Vaelora.
+</p>
+`,
+
+dragonborn: `
+<h1>Драконороджені</h1>
+
+<div class="stat"><b>Тип:</b> Драконяча раса</div>
+<div class="stat"><b>Середній зріст:</b> 180-250 см</div>
+<div class="stat"><b>Тривалість життя:</b> 150 років</div>
+
+<h2>Опис</h2>
+
+<p>
+Нащадки древніх драконів.
+</p>
+`,
+
+tigari: `
+<h1>Тигролюди</h1>
+
+<div class="stat"><b>Тип:</b> Звіролюди</div>
+<div class="stat"><b>Середній зріст:</b> 170-220 см</div>
+<div class="stat"><b>Тривалість життя:</b> 90 років</div>
+
+<h2>Опис</h2>
+
+<p>
+Горда раса мисливців та воїнів.
+</p>
+`
+
+};
+
+function showRace(id){
+    document.getElementById("content").innerHTML = races[id];
+}
+
+</script>
+
+</body>
+</html>
