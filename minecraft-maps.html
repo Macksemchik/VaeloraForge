@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Карти Minecraft | Vaelora Forge</title>
-
-<style>
-
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#0f172a;
-    color:white;
-}
-
-header{
-    background:#111827;
-    text-align:center;
-    padding:50px 20px;
-}
-
-header h1{
-    margin:0;
-    font-size:3rem;
-}
-
-header p{
-    color:#94a3b8;
-}
-
-.container{
-    max-width:1300px;
-    margin:auto;
-    padding:30px;
-}
-
-.maps-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:#1e293b;
-    border-radius:15px;
-    overflow:hidden;
-    position:relative;
-    box-shadow:0 0 15px rgba(0,0,0,0.3);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Карти Minecraft | Vaelora Forge</title>
+        
+        <style>
+            body{
+                margin:0;
+                font-family:Arial, sans-serif;
+                background:#0f172a;
+                color:white;
+            }
+            
+            header{
+                background:#111827;
+                text-align:center;
+                padding:50px 20px;
+            }
+            
+            header h1{
+                margin:0;
+                font-size:3rem;
+            }
+            
+            header p{
+                color:#94a3b8;
+            }
+            
+            .container{
+                max-width:1300px;
+                margin:auto;
+                padding:30px;
+            }
+            
+            .maps-grid{
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+                gap:25px;
+            }
+            
+            .card{
+                background:#1e293b;
+                border-radius:15px;
+                overflow:hidden;
+                position:relative;
+                box-shadow:0 0 15px rgba(0,0,0,0.3);
+            }
+            
+            .card img{
+                width:100%;
+                height:220px;
+                object-fit:cover;
+            }
 
 .card-content{
     padding:20px;
@@ -127,155 +126,87 @@ footer{
     margin-top:50px;
     background:#111827;
 }
-
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>Minecraft Maps</h1>
-<p>Офіційні карти Vaelora Forge</p>
-</header>
-
-<div class="container">
-
-<div class="maps-grid">
-
-<!-- Crown of Ashes -->
-
-<div class="card">
-
-<img src="images/crown-of-ashes.jpg" alt="Crown of Ashes">
-
-<div class="card-content">
-
-<h2>Crown of Ashes I</h2>
-
-<p>
-Пригодницька карта з сюжетом у світі Елдорії.
-</p>
-
-<span class="status development">
-У розробці
-</span>
-
-<div class="release">
-Орієнтовний вихід: 2027
-</div>
-
-</div>
-
-<button class="expand-btn"
-onclick="toggleDetails(this)">
-+
-</button>
-
-<div class="details">
-
-<h3>Повний опис</h3>
-
-<p>
-Гравець потрапляє у світ Елдорії під час
-епохи конфліктів між державами та
-зростання впливу темних сил.
-</p>
-
-<h3>Про світ</h3>
-
-<p>
-Елдорія — древній магічний світ Великого
-Колеса, населений людьми,
-драконородженими, нагами та багатьма
-іншими расами.
-</p>
-
-</div>
-
-</div>
-
-<!-- Друга карта -->
-
-<div class="card">
-
-<img src="images/project-placeholder.jpg">
-
-<div class="card-content">
-
-<h2>Project: Lost Kingdom</h2>
-
-<p>
-Дослідницька карта у стародавніх руїнах.
-</p>
-
-<span class="status planning">
-Планування
-</span>
-
-<div class="release">
-Орієнтовний вихід: невідомо
-</div>
-
-</div>
-
-<button class="expand-btn"
-onclick="toggleDetails(this)">
-+
-</button>
-
-<div class="details">
-
-<h3>Повний опис</h3>
-
-<p>
-Мандрівка крізь занепалу цивілізацію.
-</p>
-
-<h3>Про світ</h3>
-
-<p>
-Події відбуваються на планеті Аурелія.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="future-projects">
-
-<h2>Майбутні проєкти</h2>
-
-<ul>
-
-<li>
-Нова сюжетна карта у всесвіті Елдорії.
-</li>
-
-<li>
-Глобальний RPG-мод для Minecraft Bedrock.
-</li>
-
-<li>
-Інтерактивна енциклопедія мультивсесвіту.
-</li>
-
-<li>
-Серія карт про Організацію Часового Порядку.
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<footer>
-Vaelora Forge © 2026
-</footer>
-
-<script>
+        </style>
+    </head>
+    
+    <body>
+        
+        <header>
+            <h1>Minecraft Maps</h1>
+            <p>Офіційні карти Vaelora Forge</p>
+        </header>
+        
+        <div class="container">
+            <div class="maps-grid">
+                <!-- Crown of Ashes -->
+                <div class="card">
+                    <img src="images/crown-of-ashes.jpg" alt="Crown of Ashes">
+                    <div class="card-content">
+                        <h2>Crown of Ashes I</h2>
+                        <p>Пригодницька карта з сюжетом у світі Елдорії.</p>
+                        <span class="status development">
+                            У розробці
+                        </span>
+                        <div class="release">
+                            Орієнтовний вихід: березень 2027
+                        </div>
+                    </div>
+                    <button class="expand-btn"
+                        onclick="toggleDetails(this)">
+                        +
+                    </button>
+                    <div class="details">
+                        <h3>Повний опис</h3>
+                        <p>Гравець потрапляє у світ Елдорії під час
+                        епохи конфліктів між державами та
+                        зростання впливу темних сил.</p>
+                        <h3>Про світ</h3>
+                        <p>Елдорія — древній магічний світ Великого
+                        Колеса, населений людьми,
+                        драконородженими, нагами та багатьма
+                        іншими расами.</p>
+                    </div>
+                </div>
+                
+                <!-- Друга карта -->
+                <div class="card">
+                    <img src="images/project-placeholder.jpg">
+                    <div class="card-content">
+                        <h2>Project: Lost Kingdom</h2>
+                        <p>Дослідницька карта у стародавніх руїнах.</p>
+                        <span class="status planning">
+                            Планування
+                        </span>
+                        <div class="release">
+                            Орієнтовний вихід: невідомо
+                        </div>
+                    </div>
+                    <button class="expand-btn"
+                        onclick="toggleDetails(this)">
+                        +
+                    </button>
+                    <div class="details">
+                        <h3>Повний опис</h3>
+                        <p>Мандрівка крізь занепалу цивілізацію.</p>
+                        <h3>Про світ</h3>
+                        <p>Події відбуваються на планеті Аурелія.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="future-projects">
+                <h2>Майбутні проєкти</h2>
+                <ul>
+                    <li>Нова сюжетна карта у всесвіті Елдорії.</li>
+                    <li>Глобальний RPG-мод для Minecraft Bedrock.</li>
+                    <li>Інтерактивна енциклопедія мультивсесвіту.</li>
+                    <li>Серія карт про Організацію Часового Порядку.</li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            Vaelora Forge © 2026
+        </footer>
+        <script>
 
 function toggleDetails(button){
 
@@ -296,7 +227,6 @@ button.textContent="−";
 
 }
 
-</script>
-
-</body>
+        </script>
+    </body>
 </html>
