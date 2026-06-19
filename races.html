@@ -3,99 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Раси — Vaelora Forge</title>
-<link rel="stylesheet" href="styles.css">
 
+<title>Раси — Vaelora Forge</title>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<style>
+
+.races-page{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.page-title{
+    font-size:3rem;
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.search-box{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:16px;
+    background:#1e293b;
+    color:white;
+    font-size:1.1rem;
+    margin-bottom:25px;
+}
+
+.search-box::placeholder{
+    color:#94a3b8;
+}
+
+.race-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#1e293b;
+    border:1px solid #334155;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+    color:white;
+
+    margin-bottom:20px;
+
+    transition:0.3s;
+}
+
+.race-card:hover{
+    transform:translateY(-4px);
+    border-color:#d4af37;
+    box-shadow:0 0 20px rgba(212,175,55,0.25);
+}
+
+.race-info{
+    padding:25px;
+    flex:1;
+}
+
+.race-info h2{
+    color:#d4af37;
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.race-info p{
+    color:#cbd5e1;
+    font-size:1.1rem;
+    margin-bottom:15px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.tag{
+    background:#334155;
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:0.9rem;
+}
+
+.race-image{
+    width:260px;
+    height:180px;
+    object-fit:cover;
+}
+
+@media(max-width:768px){
+
+    .page-title{
+        font-size:2.2rem;
+    }
+
+    .race-card{
+        flex-direction:column;
+    }
+
+    .race-image{
+        width:100%;
+        height:220px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="header">
-    <h1>Раси Vaelora</h1>
-</div>
+<header class="site-header">
 
-<div class="container">
+    <a href="index.html" class="logo-link">
 
-    <div class="sidebar">
+        <img src="images/logo.png" alt="Vaelora Forge" class="logo">
 
-        <div class="race" onclick="showRace('human')">
-            Люди
+        <div class="logo-text">
+            <div class="logo-top">Vaelora</div>
+            <div class="logo-bottom">Forge</div>
         </div>
 
-        <div class="race" onclick="showRace('dragonborn')">
-            Драконороджені
-        </div>
+    </a>
 
-        <div class="race" onclick="showRace('tigari')">
-            Тигролюди
-        </div>
+</header>
 
+<main class="races-page">
+
+<h1 class="page-title">Раси Vaelora</h1>
+
+<input
+    type="text"
+    class="search-box"
+    id="searchInput"
+    placeholder="Пошук раси..."
+>
+
+<a href="races/humans.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Люди</h2>
+        <p>Найпоширеніша раса світу.</p>
+
+        <div class="tags">
+            <span class="tag">Гуманоїди</span>
+            <span class="tag">Смертні</span>
+        </div>
     </div>
 
-    <div class="content" id="content">
+    <img src="images/races/human.jpg" class="race-image" alt="Люди">
 
-        <h1>Оберіть расу</h1>
+</a>
 
-        <p>
-            Натисніть на расу ліворуч для перегляду інформації.
-        </p>
+<a href="races/elves.html" class="race-card race-item">
 
+    <div class="race-info">
+        <h2>Ельфи</h2>
+        <p>Древній народ магії та природи.</p>
+
+        <div class="tags">
+            <span class="tag">Магія</span>
+            <span class="tag">Природа</span>
+        </div>
     </div>
 
-</div>
+    <img src="images/races/elf.jpg" class="race-image" alt="Ельфи">
+
+</a>
+
+<a href="races/dwarves.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Дварфи</h2>
+        <p>Майстри ремесел та металу.</p>
+
+        <div class="tags">
+            <span class="tag">Гори</span>
+            <span class="tag">Ковалі</span>
+        </div>
+    </div>
+
+    <img src="images/races/dwarf.jpg" class="race-image" alt="Дварфи">
+
+</a>
+
+<a href="races/gnomes.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Гноми</h2>
+        <p>Винахідники та алхіміки.</p>
+
+        <div class="tags">
+            <span class="tag">Наука</span>
+            <span class="tag">Алхімія</span>
+        </div>
+    </div>
+
+    <img src="images/races/gnome.jpg" class="race-image" alt="Гноми">
+
+</a>
+
+<a href="races/halflings.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Напіврослики</h2>
+        <p>Мандрівники та землероби.</p>
+
+        <div class="tags">
+            <span class="tag">Села</span>
+            <span class="tag">Подорожі</span>
+        </div>
+    </div>
+
+    <img src="images/races/halfling.jpg" class="race-image" alt="Напіврослики">
+
+</a>
+
+<a href="races/orcs.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Орки</h2>
+        <p>Сильний народ воїнів.</p>
+
+        <div class="tags">
+            <span class="tag">Воїни</span>
+            <span class="tag">Племена</span>
+        </div>
+    </div>
+
+    <img src="images/races/orc.jpg" class="race-image" alt="Орки">
+
+</a>
+
+<a href="races/ogres.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Огри</h2>
+        <p>Могутні велетенські істоти.</p>
+
+        <div class="tags">
+            <span class="tag">Сила</span>
+            <span class="tag">Великі</span>
+        </div>
+    </div>
+
+    <img src="images/races/ogre.jpg" class="race-image" alt="Огри">
+
+</a>
+
+<a href="races/goblins.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Гобліни</h2>
+        <p>Численний винахідливий народ.</p>
+
+        <div class="tags">
+            <span class="tag">Хитрість</span>
+            <span class="tag">Винаходи</span>
+        </div>
+    </div>
+
+    <img src="images/races/goblin.jpg" class="race-image" alt="Гобліни">
+
+</a>
+
+<a href="races/trolls.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Тролі</h2>
+        <p>Істоти з регенерацією.</p>
+
+        <div class="tags">
+            <span class="tag">Регенерація</span>
+            <span class="tag">Сила</span>
+        </div>
+    </div>
+
+    <img src="images/races/troll.jpg" class="race-image" alt="Тролі">
+
+</a>
+
+<a href="races/giants.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Велетні</h2>
+        <p>Давній народ гігантів.</p>
+
+        <div class="tags">
+            <span class="tag">Гіганти</span>
+            <span class="tag">Стародавні</span>
+        </div>
+    </div>
+
+    <img src="images/races/giant.jpg" class="race-image" alt="Велетні">
+
+</a>
+
+<a href="races/kobolds.html" class="race-card race-item">
+
+    <div class="race-info">
+        <h2>Кобольди</h2>
+        <p>Малі драконоподібні істоти.</p>
+
+        <div class="tags">
+            <span class="tag">Дракони</span>
+            <span class="tag">Печери</span>
+        </div>
+    </div>
+
+    <img src="images/races/kobold.jpg" class="race-image" alt="Кобольди">
+
+</a>
+
+</main>
 
 <script>
+const searchInput = document.getElementById('searchInput');
+const cards = document.querySelectorAll('.race-item');
 
-const races = {
+searchInput.addEventListener('input', function(){
 
-human: `
-<h1>Люди</h1>
+    const value = this.value.toLowerCase();
 
-<div class="stat"><b>Тип:</b> Смертні</div>
-<div class="stat"><b>Середній зріст:</b> 160-200 см</div>
-<div class="stat"><b>Тривалість життя:</b> 70-100 років</div>
+    cards.forEach(card => {
 
-<h2>Опис</h2>
+        const text = card.textContent.toLowerCase();
 
-<p>
-Люди є найчисленнішим народом Vaelora.
-</p>
-`,
+        if(text.includes(value)){
+            card.style.display = 'flex';
+        }else{
+            card.style.display = 'none';
+        }
 
-dragonborn: `
-<h1>Драконороджені</h1>
+    });
 
-<div class="stat"><b>Тип:</b> Драконяча раса</div>
-<div class="stat"><b>Середній зріст:</b> 180-250 см</div>
-<div class="stat"><b>Тривалість життя:</b> 150 років</div>
-
-<h2>Опис</h2>
-
-<p>
-Нащадки древніх драконів.
-</p>
-`,
-
-tigari: `
-<h1>Тигролюди</h1>
-
-<div class="stat"><b>Тип:</b> Звіролюди</div>
-<div class="stat"><b>Середній зріст:</b> 170-220 см</div>
-<div class="stat"><b>Тривалість життя:</b> 90 років</div>
-
-<h2>Опис</h2>
-
-<p>
-Горда раса мисливців та воїнів.
-</p>
-`
-
-};
-
-function showRace(id){
-    document.getElementById("content").innerHTML = races[id];
-}
-
+});
 </script>
 
 </body>
