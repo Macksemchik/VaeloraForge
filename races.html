@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Раси — Vaelora Forge</title>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" type="image/png" href="images/favicon.png">
-
-<style>
-
-.races-page{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-}
-
-.page-title{
-    font-size:3rem;
-    color:#d4af37;
-    margin-bottom:20px;
-}
-
-.search-box{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:16px;
-    background:#1e293b;
-    color:white;
-    font-size:1.1rem;
-    margin-bottom:25px;
-}
-
-.search-box::placeholder{
-    color:#94a3b8;
-}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Раси — Vaelora Forge</title>
+        
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        
+        <style>
+            
+            .races-page{
+                max-width:1200px;
+                margin:auto;
+                padding:20px;
+            }
+            
+            .page-title{
+                font-size:3rem;
+                color:#d4af37;
+                margin-bottom:20px;
+            }
+            
+            .search-box{
+                width:100%;
+                padding:16px;
+                border:none;
+                border-radius:16px;
+                background:#1e293b;
+                color:white;
+                font-size:1.1rem;
+                margin-bottom:25px;
+            }
+            
+            .search-box::placeholder{
+                color:#94a3b8;
+            }
 
 .race-card{
     display:flex;
@@ -117,131 +116,95 @@
 
 }
 
-</style>
-</head>
+        </style>
+    </head>
+    
+    <body>
+        <header class="site-header">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Vaelora Forge" class="logo">
+                <div class="logo-text">
+                    <div class="logo-top">Vaelora</div>
+                    <div class="logo-bottom">Forge</div>
+                </div>
+            </a>
+        </header>
+        
+        <main class="races-page">
+            <h1 class="page-title">Раси Vaelora</h1>
+            <input type="text" class="search-box" id="searchInput" placeholder="Пошук раси...">
+            
+            <a href="races/humans.html" class="race-card race-item">
+                
+                <div class="race-info">
+                    <h2>Люди</h2>
+                    <p>Найпоширеніша раса світу.</p>
+                    <div class="tags">
+                        <span class="tag">Гуманоїди</span>
+                        <span class="tag">Смертні</span>
+                    </div>
+                </div>
+                <img src="images/races/human.jpg" class="race-image" alt="Люди">
+            </a>
+            
+            <a href="races/elves.html" class="race-card race-item">
+                <div class="race-info">
+                    <h2>Ельфи</h2>
+                    <p>Древній народ магії та природи.</p>
+                    <div class="tags">
+                        <span class="tag">Магія</span>
+                        <span class="tag">Природа</span>
+                    </div>
+                </div>
+                <img src="images/races/elf.jpg" class="race-image" alt="Ельфи">
+            </a>
+            
+            <a href="races/dwarves.html" class="race-card race-item">
+                <div class="race-info">
+                    <h2>Дварфи</h2>
+                    <p>Майстри ремесел та металу.</p>
+                    <div class="tags">
+                        <span class="tag">Гори</span>
+                        <span class="tag">Ковалі</span>
+                    </div>
+                </div>
+                <img src="images/races/dwarf.jpg" class="race-image" alt="Дварфи">
+            </a>
 
-<body>
-
-<header class="site-header">
-
-    <a href="index.html" class="logo-link">
-
-        <img src="images/logo.png" alt="Vaelora Forge" class="logo">
-
-        <div class="logo-text">
-            <div class="logo-top">Vaelora</div>
-            <div class="logo-bottom">Forge</div>
-        </div>
-
-    </a>
-
-</header>
-
-<main class="races-page">
-
-<h1 class="page-title">Раси Vaelora</h1>
-
-<input
-    type="text"
-    class="search-box"
-    id="searchInput"
-    placeholder="Пошук раси..."
->
-
-<a href="races/humans.html" class="race-card race-item">
-
-    <div class="race-info">
-        <h2>Люди</h2>
-        <p>Найпоширеніша раса світу.</p>
-
-        <div class="tags">
-            <span class="tag">Гуманоїди</span>
-            <span class="tag">Смертні</span>
-        </div>
-    </div>
-
-    <img src="images/races/human.jpg" class="race-image" alt="Люди">
-
-</a>
-
-<a href="races/elves.html" class="race-card race-item">
-
-    <div class="race-info">
-        <h2>Ельфи</h2>
-        <p>Древній народ магії та природи.</p>
-
-        <div class="tags">
-            <span class="tag">Магія</span>
-            <span class="tag">Природа</span>
-        </div>
-    </div>
-
-    <img src="images/races/elf.jpg" class="race-image" alt="Ельфи">
-
-</a>
-
-<a href="races/dwarves.html" class="race-card race-item">
-
-    <div class="race-info">
-        <h2>Дварфи</h2>
-        <p>Майстри ремесел та металу.</p>
-
-        <div class="tags">
-            <span class="tag">Гори</span>
-            <span class="tag">Ковалі</span>
-        </div>
-    </div>
-
-    <img src="images/races/dwarf.jpg" class="race-image" alt="Дварфи">
-
-</a>
-
-<a href="races/gnomes.html" class="race-card race-item">
-
+            <a href="races/gnomes.html" class="race-card race-item">
     <div class="race-info">
         <h2>Гноми</h2>
         <p>Винахідники та алхіміки.</p>
-
         <div class="tags">
             <span class="tag">Наука</span>
             <span class="tag">Алхімія</span>
         </div>
     </div>
-
     <img src="images/races/gnome.jpg" class="race-image" alt="Гноми">
-
 </a>
 
 <a href="races/halflings.html" class="race-card race-item">
-
     <div class="race-info">
         <h2>Напіврослики</h2>
         <p>Мандрівники та землероби.</p>
-
         <div class="tags">
             <span class="tag">Села</span>
             <span class="tag">Подорожі</span>
         </div>
     </div>
-
     <img src="images/races/halfling.jpg" class="race-image" alt="Напіврослики">
-
 </a>
 
 <a href="races/orcs.html" class="race-card race-item">
-
     <div class="race-info">
         <h2>Орки</h2>
         <p>Сильний народ воїнів.</p>
-
         <div class="tags">
             <span class="tag">Воїни</span>
             <span class="tag">Племена</span>
         </div>
     </div>
-
     <img src="images/races/orc.jpg" class="race-image" alt="Орки">
-
 </a>
 
 <a href="races/ogres.html" class="race-card race-item">
@@ -308,46 +271,37 @@
 
 </a>
 
-<a href="races/kobolds.html" class="race-card race-item">
+            <a href="races/kobolds.html" class="race-card race-item">
+                <div class="race-info">
+                    <h2>Кобольди</h2>
+                    <p>Малі драконоподібні істоти.</p>
+                    <div class="tags">
+                        <span class="tag">Дракони</span>
+                        <span class="tag">Печери</span>
+                    </div>
+                </div>
+                <img src="images/races/kobold.jpg" class="race-image" alt="Кобольди">
+            </a>
+        </main>
+        
+        <script>
+            const searchInput = document.getElementById('searchInput');
+            const cards = document.querySelectorAll('.race-item');
+            
+            searchInput.addEventListener('input', function(){
+                
+                const value = this.value.toLowerCase();
+                cards.forEach(card => {
+                    
+                    const text = card.textContent.toLowerCase();
 
-    <div class="race-info">
-        <h2>Кобольди</h2>
-        <p>Малі драконоподібні істоти.</p>
-
-        <div class="tags">
-            <span class="tag">Дракони</span>
-            <span class="tag">Печери</span>
-        </div>
-    </div>
-
-    <img src="images/races/kobold.jpg" class="race-image" alt="Кобольди">
-
-</a>
-
-</main>
-
-<script>
-const searchInput = document.getElementById('searchInput');
-const cards = document.querySelectorAll('.race-item');
-
-searchInput.addEventListener('input', function(){
-
-    const value = this.value.toLowerCase();
-
-    cards.forEach(card => {
-
-        const text = card.textContent.toLowerCase();
-
-        if(text.includes(value)){
-            card.style.display = 'flex';
-        }else{
-            card.style.display = 'none';
-        }
-
-    });
-
-});
-</script>
-
-</body>
+                    if(text.includes(value)){
+                        card.style.display = 'flex';
+                    }else{
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>
