@@ -1,10 +1,76 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Світовий Архів | Vaelora Forge</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Світовий Архів | Vaelora Forge</title>
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body{
+            margin:0;
+            background:#0f172a;
+            color:white;
+            font-family:Arial,sans-serif;
+        }
+        
+        header{
+            text-align:center;
+            padding:40px;
+            background:#111827;
+        }
+
+h1{
+    margin:0;
+}
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    padding:20px;
+    background:#1e293b;
+}
+
+input,select{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:12px;
+    padding:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h2{
+    margin-top:0;
+    color:#60a5fa;
+}
+
+.tag{
+    display:inline-block;
+    background:#334155;
+    padding:4px 8px;
+    border-radius:5px;
+    margin:2px;
+}
+    </style>
     
 </head>
 
