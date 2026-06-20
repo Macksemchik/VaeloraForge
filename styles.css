@@ -7,9 +7,14 @@
 }
 
 .logo-link{
+    position:fixed;
+    top:20px;
+    right:20px;
     display:flex;
     align-items:center;
+    gap:10px;
     text-decoration:none;
+    z-index:1000;
 }
 
 .logo{
@@ -29,5 +34,5 @@
 
 .logo-bottom{
     font-size:18px;
-    color:white;
+    color:#b388ff;
 }
