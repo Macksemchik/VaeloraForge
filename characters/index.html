@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Персонажі | Vaelora Forge</title>
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+    margin:0;
+}
+
+.page{
+    max-width:1400px;
+    margin:auto;
+    padding:20px;
+}
+
+.article-card{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+h1{
+    color:#1e3a8a;
+    margin-bottom:10px;
+}
+
+.page-description{
+    color:#6b7280;
+    margin-bottom:30px;
+}
+
+.search-box{
+    width:100%;
+    padding:15px;
+    font-size:1rem;
+    border:2px solid #c7d2fe;
+    border-radius:14px;
+    margin-bottom:30px;
+}
+
+.characters{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.character-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#eef2ff;
+
+    border:1px solid #c7d2fe;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:0.2s;
+}
+
+.character-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 15px rgba(79,70,229,0.15);
+}
+
+.character-info{
+    flex:1;
+}
+
+.character-name{
+    font-size:1.4rem;
+    font-weight:bold;
+    color:#1e3a8a;
+    margin-bottom:8px;
+}
+
+.character-description{
+    color:#4b5563;
+}
+
+.character-image{
+    width:120px;
+    height:120px;
+
+    border-radius:12px;
+
+    object-fit:cover;
+
+    margin-left:20px;
+}
+
+@media(max-width:700px){
+
+    .character-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .character-image{
+        margin-left:0;
+        margin-top:15px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="../index.html" class="logo-link">
+    <img src="../images/logo.png" class="logo">
+
+    <div class="logo-text">
+        <div class="logo-top">Vaelora</div>
+        <div class="logo-bottom">Forge</div>
+    </div>
+</a>
+
+<div class="page">
+
+<div class="article-card">
+
+<h1>Персонажі</h1>
+
+<p class="page-description">
+Герої, правителі, боги та легендарні постаті мультивсесвіту Vaelora.
+</p>
+
+<input
+type="text"
+id="searchInput"
+class="search-box"
+placeholder="Пошук персонажа..."
+>
+
+<div class="characters" id="charactersList">
+
+<a href="arion.html" class="character-card">
+
+<div class="character-info">
+<div class="character-name">
+Аріон
+</div>
+
+<div class="character-description">
+Легендарний герой епохи об'єднання.
+</div>
+</div>
+
+<img
+src="../images/characters/arion.jpg"
+class="character-image"
+alt="Аріон"
+>
+
+</a>
+
+<a href="elaria.html" class="character-card">
+
+<div class="character-info">
+<div class="character-name">
+Еларія
+</div>
+
+<div class="character-description">
+Видатна магиня та дослідниця світів.
+</div>
+</div>
+
+<img
+src="../images/characters/elaria.jpg"
+class="character-image"
+alt="Еларія"
+>
+
+</a>
+
+<a href="drakar.html" class="character-card">
+
+<div class="character-info">
+<div class="character-name">
+Дракар
+</div>
+
+<div class="character-description">
+Правитель могутньої драконячої держави.
+</div>
+</div>
+
+<img
+src="../images/characters/drakar.jpg"
+class="character-image"
+alt="Дракар"
+>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener(
+"keyup",
+function(){
+
+let filter =
+this.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(
+".character-card"
+);
+
+cards.forEach(card=>{
+
+let text =
+card.textContent.toLowerCase();
+
+if(text.includes(filter)){
+card.style.display="flex";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
