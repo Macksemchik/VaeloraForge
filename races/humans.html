@@ -1,68 +1,109 @@
 <!DOCTYPE html>
 <html lang="uk">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>Люди | Vaelora Forge</title>
-        
-        <link rel="stylesheet" href="../styles.css">
-        <link rel="icon" type="image/png" href="../images/favicon.png">
-        
-        <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Люди | Vaelora Forge</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <style>
 
 body{
     font-family:Arial,sans-serif;
-    background:#0a0f1f;
-    color:white;
-    line-height:1.7;
+    background:#f5f7fb;
+    color:#1f2937;
+    line-height:1.8;
+    margin:0;
+}
+
+.page{
+    max-width:1400px;
+    margin:auto;
+    padding:20px;
 }
 
 .article-card{
-    max-width:1400px;
-    margin:100px auto 40px auto;
+    background:white;
+    border-radius:20px;
     padding:40px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
 
-    background:#111827;
+.breadcrumbs{
+    margin-bottom:20px;
+    color:#6b7280;
+}
 
-    border-radius:24px;
-
-    border:1px solid rgba(120,120,255,0.25);
-
-    box-shadow:
-    0 0 30px rgba(80,80,255,0.15);
+.breadcrumbs a{
+    color:#2563eb;
+    text-decoration:none;
 }
 
 .article-title{
     font-size:3rem;
-    margin-bottom:30px;
-    color:#ffffff;
+    color:#1e3a8a;
+    margin-bottom:15px;
 }
 
-.intro{
+.lead{
+    font-size:1.15rem;
+    margin-bottom:30px;
+}
+
+.top-layout{
+    display:grid;
+    grid-template-columns:250px 1fr 320px;
+    gap:25px;
+    align-items:start;
+}
+
+.toc{
+    background:#eef2ff;
+    border:1px solid #c7d2fe;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.toc-header{
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
+    padding:15px;
     display:flex;
-    gap:30px;
-    align-items:flex-start;
-    margin-bottom:40px;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.toc-header button{
+    border:none;
+    border-radius:8px;
+    padding:5px 10px;
+    cursor:pointer;
+}
+
+.toc-content{
+    padding:15px;
+}
+
+.toc-content ul{
+    list-style:none;
+    padding:0;
+}
+
+.toc-content li{
+    margin:8px 0;
+}
+
+.toc-content a{
+    text-decoration:none;
+    color:#1e40af;
 }
 
 .infobox{
-    width:320px;
-    flex-shrink:0;
-
-    background:#16213e;
-
-    border-radius:18px;
-
+    background:#eef2ff;
+    border:1px solid #c7d2fe;
+    border-radius:16px;
     overflow:hidden;
-
-    border:1px solid rgba(120,120,255,0.25);
 }
 
 .infobox img{
@@ -74,8 +115,9 @@ body{
 
 .infobox-title{
     text-align:center;
-    font-size:1.4rem;
     padding:15px;
+    color:white;
+    font-size:1.3rem;
 
     background:linear-gradient(
         135deg,
@@ -91,238 +133,191 @@ body{
 
 .infobox td{
     padding:10px;
-    border-bottom:1px solid #22304f;
+    border-bottom:1px solid #dbeafe;
 }
 
 .infobox td:first-child{
-    color:#8ab4ff;
+    color:#1e40af;
     font-weight:bold;
 }
 
-.intro-right{
-    flex:1;
+.content{
+    margin-top:40px;
 }
 
-.lead{
-    font-size:1.15rem;
-    margin-bottom:25px;
+.content section{
+    margin-bottom:40px;
 }
 
-.toc{
-    background:#16213e;
-
-    border-radius:16px;
-
-    padding:20px;
-
-    border:1px solid rgba(120,120,255,0.25);
-}
-
-.toc h3{
-    color:#8ab4ff;
-    margin-bottom:10px;
-}
-
-.toc ul{
-    list-style:none;
-}
-
-.toc li{
-    margin:8px 0;
-}
-
-.toc a{
-    color:white;
-    text-decoration:none;
-}
-
-.toc a:hover{
-    color:#8ab4ff;
-}
-
-section{
-    margin-top:45px;
-}
-
-section h2{
-    color:#8ab4ff;
-
-    margin-bottom:15px;
-
-    border-bottom:2px solid #283b63;
-
+.content h2{
+    color:#1e3a8a;
+    border-bottom:2px solid #dbeafe;
     padding-bottom:8px;
-}
-
-section p{
-    margin-bottom:15px;
-}
-
-section ul{
-    margin-left:25px;
-}
-
-section li{
-    margin-bottom:8px;
 }
 
 footer{
     text-align:center;
-    padding:30px;
-    color:#9ca3af;
+    padding:40px;
+    color:#6b7280;
 }
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
-    .intro{
-        flex-direction:column;
-    }
-
-    .infobox{
-        width:100%;
-        max-width:420px;
+    .top-layout{
+        grid-template-columns:1fr;
     }
 
     .article-title{
         font-size:2.2rem;
     }
-}
 
+    .infobox{
+        max-width:420px;
+    }
+}
         </style>
     </head>
-    
     <body>
         <a href="../index.html" class="logo-link">
-            <img src="../images/logo.png" class="logo">
-            <div class="logo-text">
-                <div class="logo-top">Vaelora</div>
-                <div class="logo-bottom">Forge</div>
-            </div>
+          <img src="../images/logo.png" class="logo">
+          <div class="logo-text">
+            <div class="logo-top">Vaelora</div>
+            <div class="logo-bottom">Forge</div>
+          </div>
         </a>
-        
-        <main class="article-card">
-            <h1 class="article-title">Люди</h1>
-            <div class="intro">
-                <aside class="infobox">
-                    <img src="../images/races/human1.jpg" alt="Людина">
-                    <div class="infobox-title">Люди</div>
-                    <table>
-                        <tr>
-                            <td>Тип</td>
-                            <td>Гуманоїди</td>
-                        </tr>
-                        <tr>
-                            <td>Зріст</td>
-                            <td>160–190 см</td>
-                        </tr>
-                        <tr>
-                            <td>Вік</td>
-                            <td>70–100 років</td>
-                        </tr>
-                        <tr>
-                            <td>Поширення</td>
-                            <td>Усі континенти</td>
-                        </tr>
-                        <tr>
-                            <td>Мови</td>
-                            <td>Різноманітні</td>
-                        </tr>
+      
+      <div class="page">
+        <div class="article-card">
+          <div class="breadcrumbs">
+            <a href="../index.html">Головна</a> ›
+            <a href="index.html">Раси</a> ›
+            Люди
+          </div>
+          <h1 class="article-title">Люди</h1>
+          <p class="lead">
+Люди — найчисленніша та одна з найпоширеніших рас мультивсесвіту Vaelora.
+Вони населяють більшість відомих земель та створили безліч держав,
+королівств, імперій і республік.
+          </p>
+          <div class="top-layout">
+            <div class="toc">
+              <div class="toc-header">
+                <span>Зміст</span>
+                <button onclick="toggleToc()">−</button>
+              </div>
+              <div class="toc-content" id="tocContent">
+                <ul>
+                  <li><a href="#description">Опис</a></li>
+                  <li><a href="#history">Історія</a></li>
+                  <li><a href="#culture">Культура</a></li>
+                  <li><a href="#relations">Відносини</a></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <p>Люди відомі своєю адаптивністю, амбіційністю та здатністю
+                пристосовуватися до найрізноманітніших умов життя.
+                Саме це дозволило їм поширитися по всьому світу.
+              </p>
+            </div>
 
-                        <tr>
-                            <td>Статус</td>
-                            <td>Найчисленніша раса</td>
-                        </tr>
-                    </table>
-                </aside>
+<aside class="infobox">
 
-    <div class="intro-right">
-        <p class="lead"><b>Люди</b> — найпоширеніша та найрізноманітніша раса
-            мультивсесвіту Vaelora. Вони населяють більшість
-            відомих земель та створили безліч держав, королівств,
-            імперій і республік.</p>
+<img src="../images/races/human1.jpg" alt="Людина">
 
-        <div class="toc">
-
-            <h3>Зміст</h3>
-
-            <ul>
-                <li><a href="#description">Опис</a></li>
-                <li><a href="#history">Історія</a></li>
-                <li><a href="#culture">Культура</a></li>
-                <li><a href="#distribution">Поширення</a></li>
-                <li><a href="#relations">Відносини</a></li>
-            </ul>
-
-        </div>
-    </div>
+<div class="infobox-title">
+Люди
 </div>
 
+<table>
+
+<tr>
+<td>Тип</td>
+<td>Гуманоїди</td>
+</tr>
+
+<tr>
+<td>Зріст</td>
+<td>160–190 см</td>
+</tr>
+
+<tr>
+<td>Вік</td>
+<td>70–100 років</td>
+</tr>
+
+<tr>
+<td>Поширення</td>
+<td>Усі континенти</td>
+</tr>
+
+<tr>
+<td>Статус</td>
+<td>Найчисленніша раса</td>
+</tr>
+
+</table>
+</aside>
+</div>
+
+<div class="content">
+
 <section id="description">
-
-    <h2>Опис</h2>
-
-    <p>
-        Люди відомі своєю адаптивністю та здатністю
-        пристосовуватися до найрізноманітніших умов.
-        Вони можуть жити як у холодних північних землях,
-        так і в спекотних пустелях.
-    </p>
-
+<h2>Опис</h2>
+<p>Люди не мають особливих природних переваг, проте компенсують це
+гнучкістю мислення, винахідливістю та здатністю швидко навчатися.</p>
 </section>
 
 <section id="history">
-
-    <h2>Історія</h2>
-
-    <p>
-        Протягом тисячоліть люди створили численні держави,
-        які змінювали одна одну. Саме людські цивілізації
-        часто визначали політичну карту світу.
-    </p>
-
+<h2>Історія</h2>
+<p>Протягом століть люди створили численні держави та цивілізації,
+які суттєво вплинули на розвиток світу.</p>
 </section>
 
 <section id="culture">
+<h2>Культура</h2>
 
-    <h2>Культура</h2>
-
-    <p>
-        Культура людей надзвичайно різноманітна.
-        Вона залежить від регіону, держави,
-        історії та релігійних традицій.
-    </p>
-
-</section>
-
-<section id="distribution">
-
-    <h2>Поширення</h2>
-
-    <p>
-        Людські поселення можна знайти майже в усіх
-        куточках відомого світу Vaelora.
-    </p>
+<p>
+Культура людей надзвичайно різноманітна та залежить від регіону,
+історії та традицій конкретного народу.
+</p>
 
 </section>
 
 <section id="relations">
+<h2>Відносини з іншими расами</h2>
 
-    <h2>Відносини з іншими расами</h2>
-
-    <ul>
-        <li>Ельфи — союзники та конкуренти.</li>
-        <li>Дварфи — важливі торгові партнери.</li>
-        <li>Гноми — наукові союзники.</li>
-        <li>Кобольди — від нейтралітету до співпраці.</li>
-    </ul>
+<p>
+Люди активно взаємодіють з більшістю розумних рас світу через
+торгівлю, дипломатію, науку та військові союзи.
+</p>
 
 </section>
 
-</main>
+</div>
+
+</div>
+
+</div>
 
 <footer>
 © Vaelora Forge
 </footer>
 
-</body>
+<script>
+
+function toggleToc(){
+
+const toc=document.getElementById("tocContent");
+
+if(toc.style.display==="none"){
+    toc.style.display="block";
+}else{
+    toc.style.display="none";
+}
+
+}
+
+        </script>
+    </body>
 </html>
