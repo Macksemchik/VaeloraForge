@@ -6,6 +6,7 @@
         <loc>https://vaeloraforge.pages.dev/</loc>
     </url>
 
+    
     <url>
         <loc>https://vaeloraforge.pages.dev/races</loc>
     </url>
@@ -22,9 +23,6 @@
         <loc>https://vaeloraforge.pages.dev/races/valars</loc>
     </url>
 
-    <url>
-        <loc>https://vaeloraforge.pages.dev/charactes</loc>
-    </url>
     
     <url>
         <loc>https://vaeloraforge.pages.dev/characters</loc>
@@ -34,6 +32,11 @@
         <loc>https://vaeloraforge.pages.dev/characters/eritar-ilvaar</loc>
     </url>
 
+    <url>
+        <loc>https://vaeloraforge.pages.dev/characters/dracarian</loc>
+    </url>
+
+    
     <url>
         <loc>https://vaeloraforge.pages.dev/minecraft-maps</loc>
     </url>
