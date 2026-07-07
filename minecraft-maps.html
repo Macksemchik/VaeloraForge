@@ -3,238 +3,626 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Карти Minecraft | Vaelora Forge</title>
-
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Minecraft Maps | Vaelora Forge</title>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="icon" type="image/png" href="../images/favicon.png">
         
         <style>
-            body{
-                margin:0;
-                font-family:Arial, sans-serif;
-                background:#0f172a;
-                color:white;
-            }
-            
-            header{
-                background:#111827;
-                text-align:center;
-                padding:50px 20px;
-            }
-            
-            header h1{
-                margin:0;
-                font-size:3rem;
-            }
-            
-            header p{
-                color:#94a3b8;
-            }
-            
-            .container{
-                max-width:1300px;
-                margin:auto;
-                padding:30px;
-            }
-            
-            .maps-grid{
-                display:grid;
-                grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-                gap:25px;
-            }
-            
-            .card{
-                background:#1e293b;
-                border-radius:15px;
-                overflow:hidden;
-                position:relative;
-                box-shadow:0 0 15px rgba(0,0,0,0.3);
-            }
-            
-            .card img{
-                width:100%;
-                height:220px;
-                object-fit:cover;
-            }
 
-.card-content{
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+}
+
+.page{
+    max-width:1450px;
+    margin:auto;
     padding:20px;
 }
 
-.card h2{
-    margin-top:0;
-    color:#60a5fa;
+.article-card{
+    background:white;
+    border-radius:22px;
+    padding:40px;
+    box-shadow:0 6px 25px rgba(0,0,0,.08);
+}
+
+h1{
+    color:#1e3a8a;
+    margin-bottom:10px;
+}
+
+.page-description{
+    color:#6b7280;
+    margin-bottom:30px;
+}
+
+.search-box{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:17px;
+
+    border-radius:14px;
+
+    border:2px solid #c7d2fe;
+
+    margin-bottom:35px;
+
+    transition:.2s;
+}
+
+.search-box:focus{
+
+    outline:none;
+
+    border-color:#4f46e5;
+
+}
+
+.maps{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(420px,1fr));
+
+    gap:30px;
+
+}
+
+.map-card{
+
+    position:relative;
+
+    background:#eef2ff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid #c7d2fe;
+
+    transition:.25s;
+
+}
+
+.map-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(79,70,229,.18);
+
+}
+
+.map-link{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+.map-icon{
+
+    width:100%;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.map-info{
+
+    padding:20px;
+
+}
+
+.map-title{
+
+    font-size:24px;
+
+    color:#1e3a8a;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+.map-row{
+
+    margin:10px 0;
+
+    font-size:16px;
+
+}
+
+.stars{
+
+    color:#f59e0b;
+
+    letter-spacing:2px;
+
 }
 
 .status{
+
     display:inline-block;
-    padding:6px 12px;
-    border-radius:6px;
-    font-size:0.9rem;
-    margin-top:10px;
-}
 
-.ready{
-    background:#166534;
-}
+    padding:5px 12px;
 
-.development{
-    background:#92400e;
-}
+    border-radius:999px;
 
-.planning{
-    background:#1d4ed8;
-}
+    font-weight:bold;
 
-.release{
-    margin-top:10px;
-    color:#cbd5e1;
-}
-
-.expand-btn{
-    position:absolute;
-    right:15px;
-    bottom:15px;
-    width:40px;
-    height:40px;
-    border:none;
-    border-radius:50%;
-    background:#2563eb;
     color:white;
-    font-size:24px;
-    cursor:pointer;
+
+    font-size:14px;
+
 }
 
-.details{
-    display:none;
-    padding:20px;
-    border-top:1px solid #334155;
-    background:#111827;
+.status-ready{
+
+    background:#16a34a;
+
 }
 
-.future-projects{
-    margin-top:60px;
-    background:#111827;
-    padding:30px;
-    border-radius:15px;
+.status-dev{
+
+    background:#f59e0b;
+
 }
 
-.future-projects h2{
-    color:#60a5fa;
+.status-stop{
+
+    background:#dc2626;
+
 }
 
-footer{
+.status-plan{
+
+    background:#2563eb;
+
+}
+
+.ribbon{
+
+    position:absolute;
+
+    top:18px;
+
+    right:-45px;
+
+    width:180px;
+
     text-align:center;
-    padding:30px;
-    margin-top:50px;
-    background:#111827;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    padding:8px 0;
+
+    transform:rotate(45deg);
+
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
+
+}
+
+.ribbon-stop{
+
+    background:#dc2626;
+
+}
+
+.ribbon-plan{
+
+    background:#2563eb;
+
+}
+
+.more-btn{
+
+    position:absolute;
+
+    right:18px;
+
+    bottom:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#4f46e5;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.more-btn:hover{
+
+    background:#3730a3;
+
+    transform:scale(1.08);
+
+}
+
+.popup{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+    background:white;
+
+    border-top:1px solid #dbe4ff;
+
+}
+
+.popup-content{
+
+    padding:22px;
+
+}
+
+.popup h3{
+
+    color:#1e3a8a;
+
+    margin-bottom:12px;
+
+}
+
+.popup p{
+
+    color:#4b5563;
+
+    line-height:1.7;
+
+}
+
+.popup.open{
+
+    max-height:400px;
+
+}
+
+@media(max-width:950px){
+
+.maps{
+
+grid-template-columns:1fr;
+
+}
+
+.article-card{
+
+padding:25px;
+
+}
+
+.map-title{
+
+font-size:21px;
+
+}
+
 }
         </style>
     </head>
-    
+
     <body>
 
-        <a href="index.html" class="logo-link">
-            <img src="images/logo.png" alt="Logo" class="logo">
-            <div class="logo-text">
-                <div class="logo-top">Vaelora</div>
-                <div class="logo-bottom">Forge</div>
-            </div>
-        </a>
-        
-        <header>
-            <h1>Minecraft Maps</h1>
-            <p>Офіційні карти Vaelora Forge</p>
-        </header>
-        
-        <div class="container">
-            <div class="maps-grid">
-                <!-- Crown of Ashes -->
-                <div class="card">
-                    <img src="images/minecraft-maps/crown-of-ashes.jpg" alt="Crown of Ashes">
-                    <div class="card-content">
-                        <h2>Crown of Ashes I</h2>
-                        <p>Пригодницька карта з сюжетом у світі Елдорії.</p>
-                        <span class="status development">
-                            У розробці
-                        </span>
-                        <div class="release">
-                            Орієнтовний вихід: березень 2027
-                        </div>
-                    </div>
-                    <button class="expand-btn"
-                        onclick="toggleDetails(this)">
-                        +
-                    </button>
-                    <div class="details">
-                        <h3>Повний опис</h3>
-                        <p>Гравець потрапляє у світ Елдорії під час
-                        епохи конфліктів між державами та
-                        зростання впливу темних сил.</p>
-                        <h3>Про світ</h3>
-                        <p>Елдорія — древній магічний світ Великого
-                        Колеса, населений людьми,
-                        драконородженими, нагами та багатьма
-                        іншими расами.</p>
-                    </div>
-                </div>
-                
-                <!-- Друга карта -->
-                <div class="card">
-                    <img src="images/project-placeholder.jpg">
-                    <div class="card-content">
-                        <h2>Project: Lost Kingdom</h2>
-                        <p>Дослідницька карта у стародавніх руїнах.</p>
-                        <span class="status planning">
-                            Планування
-                        </span>
-                        <div class="release">
-                            Орієнтовний вихід: невідомо
-                        </div>
-                    </div>
-                    <button class="expand-btn"
-                        onclick="toggleDetails(this)">
-                        +
-                    </button>
-                    <div class="details">
-                        <h3>Повний опис</h3>
-                        <p>Мандрівка крізь занепалу цивілізацію.</p>
-                        <h3>Про світ</h3>
-                        <p>Події відбуваються на планеті Аурелія.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="future-projects">
-                <h2>Майбутні проєкти</h2>
-                <ul>
-                    <li>Нова сюжетна карта у всесвіті Елдорії.</li>
-                </ul>
-            </div>
-        </div>
-        <footer>
-            Vaelora Forge © 2026
-        </footer>
-        <script>
+<a href="../index.html" class="logo-link">
+    <img src="../images/logo.png" class="logo">
 
-function toggleDetails(button){
+    <div class="logo-text">
+        <div class="logo-top">Vaelora</div>
+        <div class="logo-bottom">Forge</div>
+    </div>
+</a>
 
-const details =
-button.nextElementSibling;
+<div class="page">
 
-if(details.style.display==="block"){
+<div class="article-card">
 
-details.style.display="none";
-button.textContent="+";
+<h1>Minecraft Maps</h1>
 
-}else{
+<p class="page-description">
+Сюжетні карти, пригоди та масштабні проєкти Vaelora Forge для Minecraft.
+</p>
 
-details.style.display="block";
-button.textContent="−";
+<input
+type="text"
+id="searchInput"
+class="search-box"
+placeholder="Пошук карти...">
+
+<div class="maps" id="mapsList">
+
+<!-- ===================================================== -->
+<!-- Crown of Ashes -->
+<!-- ===================================================== -->
+
+<div class="map-card">
+
+<div class="ribbon ribbon-stop">
+ЗУПИНЕНО
+</div>
+
+<a href="../minecraft-maps/crown-of-ashes-i.html" class="map-link">
+
+<img
+src="../images/maps/crown-of-ashes.jpg"
+class="map-icon"
+alt="Crown of Ashes">
+
+<div class="map-info">
+
+<div class="map-title">
+Crown of Ashes I:<br>
+Echoes of the Fallen King
+</div>
+
+<div class="map-row">
+
+<b>Рейтинг:</b>
+
+<span class="stars">
+☆☆☆☆☆☆☆☆☆☆
+</span>
+
+</div>
+
+<div class="map-row">
+
+<b>Статус:</b>
+
+<span class="status status-stop">
+Зупинено
+</span>
+
+</div>
+
+<div class="map-row">
+
+<b>Проходження:</b>
+
+≈ 20–50 годин
+
+</div>
+
+<div class="map-row">
+
+<b>Дата виходу:</b>
+
+Невідомо
+
+</div>
+
+</div>
+
+</a>
+
+<button
+class="more-btn"
+onclick="togglePopup('popup1')">
+
++
+
+</button>
+
+<div class="popup" id="popup1">
+
+<div class="popup-content">
+
+<h3>
+Crown of Ashes I
+</h3>
+
+<p>
+
+Похмура сюжетна RPG-карта, що переносить
+гравця у занепале королівство, охоплене
+стародавнім прокляттям.
+
+Досліджуйте величезний відкритий світ,
+спілкуйтеся з персонажами, виконуйте
+завдання та розкрийте таємницю
+Загиблого Короля.
+
+На даний момент розробку карти
+тимчасово призупинено.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- Lost Chaos -->
+<!-- ===================================================== -->
+
+<div class="map-card">
+
+<div class="ribbon ribbon-plan">
+ПЛАНУЄТЬСЯ
+</div>
+
+<a href="../minecraft-maps/lost-chaos.html" class="map-link">
+
+<img
+src="../images/maps/lost-chaos-icon.jpg"
+class="map-icon"
+alt="Lost Chaos">
+
+<div class="map-info">
+
+<div class="map-title">
+
+Lost Chaos
+
+</div>
+
+<div class="map-row">
+
+<b>Рейтинг:</b>
+
+<span class="stars">
+☆☆☆☆☆☆☆☆☆☆
+</span>
+
+</div>
+
+<div class="map-row">
+
+<b>Статус:</b>
+
+<span class="status status-plan">
+Планується
+</span>
+
+</div>
+
+<div class="map-row">
+
+<b>Проходження:</b>
+
+≈ 3 годин
+
+</div>
+
+<div class="map-row">
+
+<b>Дата виходу:</b>
+
+Не оголошена
+
+</div>
+
+</div>
+
+</a>
+
+<button
+class="more-btn"
+onclick="togglePopup('popup2')">
+
++
+
+</button>
+
+<div class="popup" id="popup2">
+
+<div class="popup-content">
+
+<h3>
+
+Lost Chaos
+
+</h3>
+
+<p>
+
+Масштабна сюжетна пригодницька карта,
+події якої відбуваються після великої
+катастрофи, що змінила увесь світ.
+
+Гравцю доведеться дослідити руїни
+стародавніх цивілізацій, зустріти
+нових союзників та визначити долю
+усього світу.
+
+Проєкт знаходиться на етапі
+планування.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener(
+"keyup",
+function(){
+
+let filter =
+this.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".map-card");
+
+cards.forEach(card=>{
+
+let text =
+card.innerText.toLowerCase();
+
+if(text.includes(filter))
+card.style.display="block";
+
+else
+card.style.display="none";
+
+});
+
+});
+
+function togglePopup(id){
+
+let popup =
+document.getElementById(id);
+
+popup.classList.toggle("open");
 
 }
 
-}
+</script>
 
-        </script>
-    </body>
+</body>
+
 </html>
