@@ -205,8 +205,8 @@
         <script>
             const searchInput = document.getElementById("searchInput");
             const seaFilter = document.getElementById("seaFilter");
-            const galaxy = document.getElementById("galaxyFilter");
-            const system = document.getElementById("systemFilter");
+            const galaxyFilter = document.getElementById("galaxyFilter");
+            const systemFilter = document.getElementById("systemFilter");
             const populationFilter = document.getElementById("populationFilter");
 
 function filterWorlds(){
@@ -238,6 +238,8 @@ card.style.display =
 
 searchInput.addEventListener("input",filterWorlds);
 seaFilter.addEventListener("change",filterWorlds);
+galaxyFilter.addEventListener("change", filterWorlds);
+systemFilter.addEventListener("change", filterWorlds);
 populationFilter.addEventListener("change",filterWorlds);
 
         </script>
