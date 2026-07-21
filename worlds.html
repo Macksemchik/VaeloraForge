@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Світовий Архів | Vaelora Forge</title>
-    
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/png" href="images/favicon.png">
         
@@ -25,44 +24,44 @@
             h1{
                 margin:0;
             }
+            
+            .filters{
+                display:flex;
+                flex-wrap:wrap;
+                gap:10px;
+                justify-content:center;
+                padding:20px;
+                background:#1e293b;
+            }
 
-.filters{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    justify-content:center;
-    padding:20px;
-    background:#1e293b;
-}
+            input,select{
+                padding:10px;
+                border:none;
+                border-radius:8px;
+            }
 
-input,select{
-    padding:10px;
-    border:none;
-    border-radius:8px;
-}
+            .container{
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+                gap:20px;
+                padding:30px;
+            }
 
-.container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-    padding:30px;
-}
+            .card{
+                background:#1e293b;
+                border-radius:12px;
+                padding:20px;
+                transition:0.3s;
+            }
 
-.card{
-    background:#1e293b;
-    border-radius:12px;
-    padding:20px;
-    transition:0.3s;
-}
+            .card:hover{
+                transform:translateY(-5px);
+            }
 
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h2{
-    margin-top:0;
-    color:#60a5fa;
-}
+            .card h2{
+                margin-top:0;
+                color:#60a5fa;
+            }
 
             .tag{
                 display:inline-block;
@@ -81,41 +80,52 @@ input,select{
                 <div class="logo-top">Vaelora</div>
                 <div class="logo-bottom">Forge</div>
             </div>
-        </a>
-        
+        </a>    
         <header>
             <h1>Архів Світів</h1>
             <p>Vaelora Forge Multiverse Database</p>
         </header>
 
-<div class="filters">
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Пошук світу">
 
-<input type="text" id="searchInput" placeholder="Пошук світу">
+            <select id="seaFilter">
+                <option value="">Усі космічні моря</option>
+                <option>Море Стрільця</option>
+                <option>Море Дракона</option>
+                <option>Астральне море</option>
+                <option>Море Безмежності</option>
+                <option>Море Туманностей</option>
+            </select>
 
-<select id="seaFilter">
-<option value="">Усі космічні моря</option>
-<option>Море Стрільця</option>
-<option>Море Дракона</option>
-<option>Море Зірок</option>
-<option>Море Безмежності</option>
-<option>Море Туманностей</option>
-</select>
+            <select id="galaxyFilter">
+                <option value="">Усі галактики</option>
+                <option>Чумацький Шлях</option>
+                <option>Андромеда</option>
+                <option>Вир</option>
+            </select>
 
-<select id="populationFilter">
-    <option value="">Будь-яке населення</option>
-    <option value="a">До 1 млн</option>
-    <option value="b">1-100 млн</option>
-    <option value="c">0.1-1млрд</option>
-    <option value="d">1-10 млрд</option>
-    <option value="e">10-100 млрд</option>
-    <option value="f">0.1-1трлн</option>
-    <option value="g">1-10 трлн</option>
-    <option value="h">10-100 трлн</option>
-    <option value="i">понад 100 трлн</option>
-    <option value="j">0</option>
-</select>
-
-</div>
+            <select id="systemFilter">
+                <option value="">Усі зоряні системи</option>
+                <option>Сонячна система</option>
+                <option>Система Елдорії</option>
+                <option>Система Ваелори</option>
+            </select>
+            
+            <select id="populationFilter">
+                <option value="">Будь-яке населення</option>
+                <option value="a">До 1 млн</option>
+                <option value="b">1-100 млн</option>
+                <option value="c">0.1-1млрд</option>
+                <option value="d">1-10 млрд</option>
+                <option value="e">10-100 млрд</option>
+                <option value="f">0.1-1трлн</option>
+                <option value="g">1-10 трлн</option>
+                <option value="h">10-100 трлн</option>
+                <option value="i">понад 100 трлн</option>
+                <option value="j">0</option>
+            </select>
+        </div>
 
 <div class="container" id="worldContainer">
 
@@ -155,7 +165,7 @@ input,select{
 <p>Космічне море: Море Безмежності</p>
 </div>
 
-<div class="card" data-sea="Море Зірок" data-pop="e">
+<div class="card" data-sea="Астральне морн" data-pop="e">
 <h2>Аурелія</h2>
 <p>Населення: 87 млрд</p>
 <p>Космічне море: Море Зірок</p>
@@ -185,24 +195,26 @@ input,select{
 <p>Космічне море: Море Безмежності</p>
 </div>
 
-<div class="card" data-sea="Море Зірок" data-pop="c">
+<div class="card" data-sea="Море Туманностей" data-pop="c">
 <h2>Ксерон</h2>
 <p>Населення: 500 млн</p>
 <p>Космічне море: Море Зірок</p>
 </div>
+        </div>
 
-</div>
-
-<script>
-
-const searchInput = document.getElementById("searchInput");
-const seaFilter = document.getElementById("seaFilter");
-const populationFilter = document.getElementById("populationFilter");
+        <script>
+            const searchInput = document.getElementById("searchInput");
+            const seaFilter = document.getElementById("seaFilter");
+            const galaxy = document.getElementById("galaxyFilter").value;
+            const system = document.getElementById("systemFilter").value;
+            const populationFilter = document.getElementById("populationFilter");
 
 function filterWorlds(){
 
 const search = searchInput.value.toLowerCase();
 const sea = seaFilter.value;
+const galaxy = galaxyFilter.value;
+const system = systemFilter.value;
 const pop = populationFilter.value;
 
 document.querySelectorAll(".card").forEach(card=>{
@@ -211,10 +223,12 @@ const name = card.querySelector("h2").textContent.toLowerCase();
 
 const matchSearch = name.includes(search);
 const matchSea = !sea || card.dataset.sea === sea;
+const matchGalaxy = !galaxy || card.dataset.galaxy === galaxy;
+const matchSystem = !system || card.dataset.system === system;
 const matchPop = !pop || card.dataset.pop === pop;
 
 card.style.display =
-(matchSearch && matchSea && matchPop)
+(matchSearch && matchSea && matchGalaxy && matchSystem && matchPop)
 ? "block"
 : "none";
 
@@ -226,7 +240,6 @@ searchInput.addEventListener("input",filterWorlds);
 seaFilter.addEventListener("change",filterWorlds);
 populationFilter.addEventListener("change",filterWorlds);
 
-</script>
-
-</body>
+        </script>
+    </body>
 </html>
