@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-528 | Vaelora Forge</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <style>
+      body{
+        font-family:Arial,sans-serif;
+        background:#f5f7fb;
+        color:#1f2937;
+        line-height:1.8;
+        margin:0;
+      }
+      
+      .page{
+        max-width:1400px;
+        margin:auto;
+        padding:20px;
+      }
+      
+      .article-card{
+        background:white;
+        border-radius:20px;
+        padding:40px;
+        box-shadow:0 4px 20px rgba(0,0,0,0.08);
+      }
+      
+      .breadcrumbs{
+        margin-bottom:20px;
+        color:#6b7280;
+      }
+      .breadcrumbs a{
+        color:#2563eb;
+        text-decoration:none;
+      }
+      
+      .article-title{
+        font-size:3rem;
+        color:#1e3a8a;
+        margin-bottom:15px;
+      }
+      
+      .lead{
+        font-size:1.15rem;
+        margin-bottom:30px;
+      }
+      
+      .top-layout{
+        display:grid;
+        grid-template-columns:250px 1fr 320px;
+        gap:25px;
+        align-items:start;
+      }
+      
+      .toc{
+        background:#eef2ff;
+        border:1px solid #c7d2fe;
+        border-radius:16px;
+        overflow:hidden;
+      }
+      
+      .toc-header{
+        background:linear-gradient(135deg,#4f46e5,#7c3aed);
+        color:white;
+        padding:15px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+      }
+      
+      .toc-header button{
+        border:none;
+        border-radius:8px;
+        padding:5px 10px;
+        cursor:pointer;
+      }
+      
+      .toc-content{
+        padding:15px;
+      }
+      
+      .toc-content ul{
+        list-style:none;
+        padding:0;
+      }
+
+      .toc-content li{
+        margin:8px 0;
+      }
+
+.toc-content a{
+    text-decoration:none;
+    color:#1e40af;
+}
+
+.infobox{
+    float:right;
+    width:320px;
+    margin:
+        0
+        0
+        25px
+        30px;
+    background:#eef2ff;
+    border:1px solid #c7d2fe;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.infobox img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    display:block;
+}
+
+.infobox-title{
+    text-align:center;
+    padding:15px;
+    color:white;
+    font-size:1.3rem;
+
+    background:linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+}
+
+.infobox table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.infobox td{
+    padding:10px;
+    border-bottom:1px solid #dbeafe;
+}
+
+.infobox td:first-child{
+    color:#1e40af;
+    font-weight:bold;
+}
+
+.content{
+    margin-top:40px;
+}
+
+.content section{
+    margin-bottom:40px;
+}
+
+.content h2{
+    color:#1e3a8a;
+    border-bottom:2px solid #dbeafe;
+    padding-bottom:8px;
+}
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#6b7280;
+    }
+
+    @media(max-width:1000px){
+
+      .top-layout{
+        grid-template-columns:1fr;
+      }
+      .article-title{
+        font-size:2.2rem;
+      }
+      .infobox{
+        max-width:420px;
+      }
+    }
+        </style>
+    </head>
+  
+    <body>
+        <a href="../index.html" class="logo-link">
+          <img src="../images/logo.png" class="logo">
+          <div class="logo-text">
+            <div class="logo-top">Vaelora</div>
+            <div class="logo-bottom">Forge</div>
+          </div>
+        </a>
+      
+      <div class="page">
+        <div class="article-card">
+          <div class="breadcrumbs">
+            <a href="../index.html">Головна</a> ›
+            <a href="index.html">Персонажі</a> › Ерітар
+          </div>
+
+                <aside class="infobox">
+                    <img src="../images/characters/.jpg" alt="Ерітар">
+                    <div class="infobox-title">Ерітар</div>
+                    <table>
+                        <tr>
+                            <td></td><td></td>
+                        </tr>
+                    </table>
+                </aside>
+          
+                <h1 class="article-title">Ерітар</h1>
+                <p class="lead">Ерітар</p>
+          
+                <div class="top-layout">
+                    <div class="toc">
+                        <div class="toc-header">
+                            <span>Зміст</span>
+                            <button onclick="toggleToc()">−</button>
+                        </div>
+                        <div class="toc-content" id="tocContent">
+                            <ul>
+                                <li><a href="#description">Опис</a></li>
+                                <li><a href="#history">Історія</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <section id="description">
+                        <h2>Опис</h2>
+                        <p></p>
+                    </section>
+              
+                    <section id="history">
+                        <h2>Історія</h2>
+                        <p></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <footer>© Vaelora Forge</footer>
+
+        <script>
+            function toggleToc(){
+                const toc=document.getElementById("tocContent");
+                if(toc.style.display==="none"){
+                    toc.style.display="block";
+                }else{toc.style.display="none";}
+            }
+        </script>
+    </body>
+</html>
